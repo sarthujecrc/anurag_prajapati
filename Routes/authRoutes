@@ -1,0 +1,10 @@
+const express = require("express");
+const { loginUser, registerUser } = require("../Controllers/auth/index.js");
+const authRoutes = express.Router();
+
+// end points
+authRoutes.post("/login", loginUser);
+authRoutes.post("/Register",registerUser);
+
+module.exports = authRoutes;
+

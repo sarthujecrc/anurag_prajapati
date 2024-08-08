@@ -1,0 +1,21 @@
+const express = require("express");
+const {
+  addCategory,
+  deleteCategory,
+  allCategory,
+  oneCategory,
+  finalCategory,
+  updatedCategory,
+} = require("../Controllers/Category/index.js");
+
+const categoryRoutes = express.Router();
+
+// end points
+categoryRoutes.get("/search", finalCategory);
+categoryRoutes.post("/add", addCategory);
+categoryRoutes.delete("/Category/:id", deleteCategory);
+categoryRoutes.get("/all", allCategory);
+categoryRoutes.get("/one/:id", oneCategory);
+categoryRoutes.put("/update/:id", updatedCategory);
+
+module.exports = categoryRoutes;

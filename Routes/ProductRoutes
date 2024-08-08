@@ -1,0 +1,19 @@
+const express = require("express");
+const {
+  addProducts,
+  deletedProducts,
+  allProducts,
+  oneProduct,
+  updatedProducts,
+} = require("../Controllers/Product/index.js");
+const ProductRoutes = express.Router();
+
+// end points
+
+ProductRoutes.post("/add", addProducts);
+ProductRoutes.delete("/delete/:id", deletedProducts);
+ProductRoutes.get("Products", allProducts);
+ProductRoutes.get("one/:id", oneProduct);
+ProductRoutes.put("/update/:id", updatedProducts);
+
+module.exports = ProductRoutes;
